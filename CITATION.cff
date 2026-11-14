@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Extensions of Knuth's coefficient families (1993), with corrected OEIS links: Werner's conjecture in OEIS A208509, Formula, revision 28"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-14"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/oeis-a208509-affine-polynomial-pair-binomial-coefficients?version=2"
+license: "CC-BY-4.0"

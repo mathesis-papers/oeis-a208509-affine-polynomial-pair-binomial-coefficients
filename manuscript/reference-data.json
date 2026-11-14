@@ -1,0 +1,406 @@
+{
+  "posing_sources": [
+    {
+      "id": "A208509",
+      "revision": 28,
+      "locator": "FORMULA; Knud Werner, Jan 11 2022",
+      "url": "https://oeis.org/history/view?seq=A208509&v=28"
+    },
+    {
+      "id": "A208508",
+      "revision": 10,
+      "locator": "FORMULA and COMMENTS",
+      "url": "https://oeis.org/history/view?seq=A208508&v=10"
+    }
+  ],
+  "column_prefixes": [
+    {
+      "id": "A005408",
+      "url": "https://oeis.org/A005408",
+      "family": "v",
+      "degree": 0,
+      "first_source_n": 1,
+      "values": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19
+      ]
+    },
+    {
+      "id": "A000330",
+      "url": "https://oeis.org/A000330",
+      "family": "v",
+      "degree": 1,
+      "first_source_n": 3,
+      "values": [
+        1,
+        5,
+        14,
+        30,
+        55,
+        91,
+        140,
+        204,
+        285,
+        385
+      ]
+    },
+    {
+      "id": "A005585",
+      "url": "https://oeis.org/A005585",
+      "family": "v",
+      "degree": 2,
+      "first_source_n": 5,
+      "values": [
+        1,
+        7,
+        27,
+        77,
+        182,
+        378,
+        714,
+        1254,
+        2079,
+        3289
+      ]
+    },
+    {
+      "id": "A050486",
+      "url": "https://oeis.org/A050486",
+      "family": "v",
+      "degree": 3,
+      "first_source_n": 7,
+      "values": [
+        1,
+        9,
+        44,
+        156,
+        450,
+        1122,
+        2508,
+        5148,
+        9867,
+        17875
+      ]
+    },
+    {
+      "id": "A054333",
+      "url": "https://oeis.org/A054333",
+      "family": "v",
+      "degree": 4,
+      "first_source_n": 9,
+      "values": [
+        1,
+        11,
+        65,
+        275,
+        935,
+        2717,
+        7007,
+        16445,
+        35750,
+        72930
+      ]
+    },
+    {
+      "id": "A057788",
+      "url": "https://oeis.org/A057788",
+      "family": "v",
+      "degree": 5,
+      "first_source_n": 11,
+      "values": [
+        1,
+        13,
+        90,
+        442,
+        1729,
+        5733,
+        16744,
+        44200,
+        107406,
+        243542
+      ]
+    },
+    {
+      "id": "A000012",
+      "url": "https://oeis.org/A000012",
+      "family": "u",
+      "degree": 0,
+      "first_source_n": 1,
+      "values": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "A000290",
+      "url": "https://oeis.org/A000290",
+      "family": "u",
+      "degree": 1,
+      "first_source_n": 2,
+      "values": [
+        1,
+        4,
+        9,
+        16,
+        25,
+        36,
+        49,
+        64,
+        81,
+        100
+      ]
+    },
+    {
+      "id": "A002415",
+      "url": "https://oeis.org/A002415",
+      "family": "u",
+      "degree": 2,
+      "first_source_n": 4,
+      "values": [
+        1,
+        6,
+        20,
+        50,
+        105,
+        196,
+        336,
+        540,
+        825,
+        1210
+      ]
+    },
+    {
+      "id": "A040977",
+      "url": "https://oeis.org/A040977",
+      "family": "u",
+      "degree": 3,
+      "first_source_n": 6,
+      "values": [
+        1,
+        8,
+        35,
+        112,
+        294,
+        672,
+        1386,
+        2640,
+        4719,
+        8008
+      ]
+    },
+    {
+      "id": "A053347",
+      "url": "https://oeis.org/A053347",
+      "family": "u",
+      "degree": 4,
+      "first_source_n": 8,
+      "values": [
+        1,
+        10,
+        54,
+        210,
+        660,
+        1782,
+        4290,
+        9438,
+        19305,
+        37180
+      ]
+    }
+  ],
+  "triangle_prefixes": {
+    "A208508": [
+      1,
+      1,
+      1,
+      1,
+      4,
+      1,
+      9,
+      1,
+      1,
+      16,
+      6,
+      1,
+      25,
+      20,
+      1,
+      1,
+      36,
+      50,
+      8,
+      1,
+      49,
+      105,
+      35,
+      1,
+      1,
+      64,
+      196,
+      112,
+      10,
+      1
+    ],
+    "A208509": [
+      1,
+      3,
+      5,
+      1,
+      7,
+      5,
+      9,
+      14,
+      1,
+      11,
+      30,
+      7,
+      13,
+      55,
+      27,
+      1,
+      15,
+      91,
+      77,
+      9,
+      17,
+      140,
+      182,
+      44,
+      1,
+      19,
+      204,
+      378,
+      156,
+      11
+    ]
+  },
+  "sum_prefixes": {
+    "A083329": [
+      1,
+      2,
+      5,
+      11,
+      23,
+      47,
+      95,
+      191,
+      383,
+      767
+    ],
+    "A090131": [
+      1,
+      3,
+      4,
+      2,
+      -4,
+      -12,
+      -16,
+      -8,
+      16,
+      48
+    ],
+    "A003948": [
+      1,
+      6,
+      30,
+      150,
+      750
+    ],
+    "A003945": [
+      1,
+      3,
+      6,
+      12,
+      24,
+      48,
+      96,
+      192,
+      384,
+      768
+    ]
+  },
+  "column_correction": {
+    "source": "A208508, COMMENTS, col 5: A054334",
+    "source_column_numbering": "one-based",
+    "fifth_column_nonzero_prefix": [
+      1,
+      10,
+      54,
+      210,
+      660
+    ],
+    "A054334_prefix": [
+      1,
+      12,
+      77,
+      352,
+      1287,
+      4004,
+      11011,
+      27456,
+      63206,
+      136136
+    ],
+    "A054334_url": "https://oeis.org/A054334",
+    "correct_column": 6,
+    "correct_degree": 5,
+    "correct_fifth_column": "A053347"
+  },
+  "sum_sources": {
+    "A083329": "https://oeis.org/A083329",
+    "A090131": "https://oeis.org/A090131",
+    "A003948": "https://oeis.org/A003948",
+    "A003945": "https://oeis.org/A003945"
+  },
+  "additional_sources": [
+    {
+      "id": "A029653",
+      "revision": 143,
+      "url": "https://oeis.org/A029653",
+      "locator": "FORMULA; Pascal array"
+    },
+    {
+      "id": "A111125",
+      "revision": 144,
+      "url": "https://oeis.org/A111125",
+      "locator": "COMMENTS and FORMULA; Morgan-Voyce coefficients"
+    },
+    {
+      "id": "A208510",
+      "revision": 109,
+      "url": "https://oeis.org/A208510",
+      "locator": "FORMULA; Skirrow, Mar 29 2026; COMMENTS column list"
+    }
+  ],
+  "alternating_companion_correction": {
+    "source": "A090131, COMMENTS; Lallouet, Jun 29 2007",
+    "url": "https://oeis.org/A090131",
+    "correct_b18": -512,
+    "b19": -1536,
+    "recurrences": [
+      "a(m+1)=a(m)+b(m)",
+      "b(m+1)=b(m)-a(m)"
+    ],
+    "initial": [
+      1,
+      2
+    ],
+    "correct_continuous_angle": "theta(m)=atan(2)-m*pi/4"
+  }
+}

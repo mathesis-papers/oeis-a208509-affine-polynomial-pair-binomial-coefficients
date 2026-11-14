@@ -1,0 +1,23 @@
+{
+  "id": "oeis-a208509-affine-polynomial-pair-binomial-coefficients",
+  "revision": 2,
+  "problem_ids": [
+    "oeis-a208509-affine-polynomial-pair-binomial-coefficients"
+  ],
+  "topic": "Werner's coefficient conjecture in OEIS A208509, Formula, revision 28",
+  "title": "Extensions of Knuth's coefficient families (1993), with corrected OEIS links: Werner's conjecture in OEIS A208509, Formula, revision 28",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "abstract": "We give an alternative parity decomposition of Knuth's coefficient families (1993, pp. 285-286), proving Knud Werner's conjecture in OEIS A208509, Formula, revision 28: [x^k]v_n=binomial(n-1,2k+1)+binomial(n,2k+1) for n>=1 and k>=0. We identify the Pascal and Morgan-Voyce antecedents, prove the companion formula and all column generating functions, correct the A003948 and A054334 cross-references and two A090131 details, reprove established column interpretations and Blanco Gomez's 2026 solution of Chu's square-covering conjecture, and give an arbitrary-coupling initial-value formula over every commutative ring.",
+  "summary": "Parity identification of the prior binomial families, corrected OEIS links, proved sibling corollaries, and a division-free formula for arbitrary coupling and initial values over any commutative ring.",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/6ffa76e4424ce4c0d1048e56afb0724762ed8285/D5/S1/Recurrence/Invariants/AffinePolynomialPairBinomialCoefficients.lean"
+}

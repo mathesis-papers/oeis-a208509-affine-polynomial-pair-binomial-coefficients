@@ -1,0 +1,11 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "oeis-a208509-affine-polynomial-pair-binomial-coefficients",
+  "version": 2,
+  "repository_url": "https://github.com/mathesis-papers/oeis-a208509-affine-polynomial-pair-binomial-coefficients",
+  "site_url": "https://papers.trureturing.org/oeis-a208509-affine-polynomial-pair-binomial-coefficients/",
+  "doi": null,
+  "reading": {},
+  "slides": [],
+  "visualizations": []
+}

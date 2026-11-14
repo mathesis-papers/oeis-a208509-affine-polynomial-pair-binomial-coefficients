@@ -1,0 +1,62 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 122928,
+      "matches_public": null,
+      "path": "paper.pdf",
+      "public_sha256": null,
+      "sha256": "b277246578a47bf9de229819d5d638b278417a703d46d99a1f8361fb9b0a3ee4"
+    },
+    "source": {
+      "bytes": 146803,
+      "matches_public": null,
+      "path": "source.archive",
+      "public_sha256": null,
+      "sha256": "125c45af0e28903982ab235c7c493c7ea075b504768449a6f0a9ddf3c8c89fbd"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We give an alternative parity decomposition of Knuth's coefficient families (1993, pp. 285-286), proving Knud Werner's conjecture in OEIS A208509, Formula, revision 28: [x^k]v_n=binomial(n-1,2k+1)+binomial(n,2k+1) for n>=1 and k>=0. We identify the Pascal and Morgan-Voyce antecedents, prove the companion formula and all column generating functions, correct the A003948 and A054334 cross-references and two A090131 details, reprove established column interpretations and Blanco Gomez's 2026 solution of Chu's square-covering conjecture, and give an arbitrary-coupling initial-value formula over every commutative ring.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "6ffa76e4424ce4c0d1048e56afb0724762ed8285",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/6ffa76e4424ce4c0d1048e56afb0724762ed8285/D5/S1/Recurrence/Invariants/AffinePolynomialPairBinomialCoefficients.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "url": "/api/v1/collected-papers/oeis-a208509-affine-polynomial-pair-binomial-coefficients/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-14T08:34:05.914785339Z",
+    "record": "oeis-a208509-affine-polynomial-pair-binomial-coefficients",
+    "repository_name": "oeis-a208509-affine-polynomial-pair-binomial-coefficients",
+    "source": {
+      "url": "/api/v1/collected-papers/oeis-a208509-affine-polynomial-pair-binomial-coefficients/files/source?version=2"
+    },
+    "title": "Extensions of Knuth's coefficient families (1993), with corrected OEIS links: Werner's conjecture in OEIS A208509, Formula, revision 28",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-14T08:34:05.914785339Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "oeis-a208509-affine-polynomial-pair-binomial-coefficients"
+  }
+}

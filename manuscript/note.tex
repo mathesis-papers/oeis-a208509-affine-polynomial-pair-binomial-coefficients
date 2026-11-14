@@ -1,0 +1,663 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,breaklinks=true]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\coeff}[2]{[x^{#1}]\,#2}
+\title{Extensions of Knuth's coefficient families (1993), with corrected OEIS links\protect\\
+\large Werner's conjecture in OEIS A208509, Formula, revision 28}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}\and
+Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
+\date{November 5, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give an alternative parity decomposition of Knuth's coefficient families
+(1993, pp.~285--286), proving Knud Werner's conjecture in OEIS A208509,
+Formula, revision 28 (January 11, 2022 attribution): the coefficient of $x^k$ in
+$v_n(x)$ is $\binom{n-1}{2k+1}+\binom n{2k+1}$ for every $n\geq1$ and $k\geq0$.
+A simultaneous induction gives the companion formula for A208508, including
+its exceptional constant term. We identify the previously published
+Pascal and Morgan--Voyce arrays behind both families, and derive all column generating functions,
+row sums and alternating row sums. We correct the A003948 row-sum and
+A054334 companion-column cross-references, and two details in the associated
+sequence in A090131. A short sibling corollary reproduces Blanco G\'omez's
+2026 proof of Chu's square-covering conjecture; it is not a new resolution.
+\end{abstract}
+
+\section{The polynomial pair and its coefficients}
+Clark Kimberling's entries A208508 and A208509 define polynomials in
+$\mathbb Z[x]$ by $u_1=v_1=1$ and, for $n\geq1$,
+\begin{equation}\label{eq:pair}
+u_{n+1}=u_n+xv_n,\qquad v_{n+1}=u_n+v_n+1.
+\end{equation}
+Werner's formula is explicitly labeled ``Conjecture'' in A208509,
+Formula, revision 28 \cite{a208509}; the companion entry is revision 10
+\cite{a208508}. We use the source index $n\geq1$ throughout and put
+$\binom mr=0$ when $r<0$ or $r>m$, for $m\geq0$.
+Knuth's published coefficient families (1993), Andr\'e-Jeannin's theorem
+(1994), and Barry's Pascal-array proof (2013) already contain the exact
+binomial arrays \cite{knuth,andre,barry}. We give the recurrence
+identification and its parity decomposition explicitly. Fixed-column formulas
+were recorded by Barry in 2003; Janji\'c's inclusion--exclusion theorem
+(2008) and Liu--Xin--Zhang's 2024 interpretations concern those established
+column sequences \cite{columns,janjic,liu}.
+Between the 1994 and May 2013 papers, Janji\'c and Petkovi\'c
+(January 2013, proof of Proposition~18) gave a bijective interpretation of
+$\binom mk+\binom{m+1}k$ \cite{janjic-petkovic}.
+Later occurrences of the Pascal array include Liang--Pei--Wang's LDU
+factor (2023, Proposition~2.9) and Yamaguchi--Shiraishi's reversed Lucas
+triangle (2026, after equation~(81), both versions) \cite{liang,yamaguchi}.
+
+\begin{theorem}\label{thm:coefficients}
+For every $n\geq1$ and $k\geq0$,
+\begin{align}
+\coeff{k}{v_n}&=\binom{n-1}{2k+1}+\binom n{2k+1},\label{eq:odd}\\
+\coeff{k}{u_n}&=\binom{n-1}{2k}+\binom n{2k}-\mathbf1_{k=0}.
+\label{eq:even}
+\end{align}
+These identities include every coefficient beyond the degrees of the
+polynomials. In particular,
+$\deg v_n=\lfloor(n-1)/2\rfloor$ and $\deg u_n=\lfloor n/2\rfloor$.
+\end{theorem}
+
+\begin{proof}
+Write $a_{n,k}=\coeff{k}{u_n}$ and $b_{n,k}=\coeff{k}{v_n}$,
+with $b_{n,-1}=0$. Taking coefficients in \eqref{eq:pair} gives
+\begin{equation}\label{eq:coeff-rec}
+a_{n+1,k}=a_{n,k}+b_{n,k-1},\qquad
+b_{n+1,k}=a_{n,k}+b_{n,k}+\mathbf1_{k=0}.
+\end{equation}
+At $n=1$, the claimed values are $a_{1,0}=b_{1,0}=1$ and zero
+for $k>0$. Assume both identities at $n$. For $k=0$,
+$a_{n+1,0}=a_{n,0}=1$, as required. For $k\geq1$, Pascal's identity gives
+\begin{align*}
+a_{n+1,k}
+&=\binom{n-1}{2k}+\binom n{2k}
+ +\binom{n-1}{2k-1}+\binom n{2k-1}\\
+&=\binom n{2k}+\binom{n+1}{2k}.
+\end{align*}
+For every $k\geq0$, the constant-term corrections cancel in the second
+recurrence, so that
+\begin{align*}
+b_{n+1,k}
+&=\binom{n-1}{2k}+\binom n{2k}
+ +\binom{n-1}{2k+1}+\binom n{2k+1}\\
+&=\binom n{2k+1}+\binom{n+1}{2k+1}.
+\end{align*}
+This proves both identities by induction. The zero convention makes the
+coefficients vanish above the asserted degrees, and the coefficient at
+each asserted degree is positive. For $u_1$, the constant term is $1$.
+\end{proof}
+
+For example, $v_1,\ldots,v_5$ are
+$1$, $3$, $5+x$, $7+5x$, $9+14x+x^2$; the corresponding $u_n$ are
+$1$, $1+x$, $1+4x$, $1+9x+x^2$, $1+16x+6x^2$.
+
+\paragraph{Exact relation to the prior proofs.}
+Knuth \cite[pp.~285--286]{knuth} gives
+\[
+T_k(m)=\binom{m+k+1}{2k+1}+\binom{m+k}{2k+1},\quad
+U_k(m)=\binom{m+k}{2k}+\binom{m+k-1}{2k}\quad(k\geq1),
+\]
+with $\nabla T_k(m)=U_k(m)$ and
+$\nabla U_k(m)=T_{k-1}(m-1)$. Thus
+$b_{n,k}=T_k(n-k-1)$ and $a_{n,k}=U_k(n-k)$ for $k\geq1$;
+the exceptional column is $a_{n,0}=1$. These are exact reindexings of
+the earlier families, rather than new binomial formulas.
+Another direct identification sets
+\[
+W_n(t)=u_n(t^2)+t v_n(t^2)+1.
+\]
+Equation~\eqref{eq:pair} gives $W_{n+1}=(1+t)W_n$ and $W_1=2+t$.
+Hence $W_n=(2+t)(1+t)^{n-1}$, the row polynomial of the
+Pascal array A029653 proved by Barry, Proposition~11 and Example~13
+\cite{barry}. Its even coefficients give $a_{n,k}+\mathbf1_{k=0}$;
+its odd coefficients give $b_{n,k}$, proving both formulas again.
+The combined polynomial $W_n-1$ is also row $n+1$ of A208510, whose
+2026 formula and 2012 column identifications record the same array
+\cite{related-arrays}. The source recurrence for A208510 is different
+from \eqref{eq:pair}; the identity is between their rows, with this shift.
+
+\begin{corollary}[Morgan--Voyce shear]\label{cor:morgan}
+Let $P_0(x)=1$, $P_1(x)=3+x$ and
+$P_m=(x+2)P_{m-1}-P_{m-2}$ for $m\geq2$. Then
+\[
+[x^k]P_m=b_{m+k+1,k}
+=\binom{m+k}{2k}+2\binom{m+k}{2k+1}\quad(0\leq k\leq m).
+\]
+These are Andr\'e-Jeannin's $r=2$ coefficient theorem (1994,
+equation~(9)) and the array A111125 \cite{andre,related-arrays}.
+\end{corollary}
+\begin{proof}
+Let $Q_m=\sum_{k=0}^m b_{m+k+1,k}x^k$. Formula~\eqref{eq:odd} gives
+the displayed coefficients by Pascal's identity. Expanding the binomial
+series yields
+\[
+\sum_{m\geq0}Q_mz^m
+=\sum_{k\geq0}\frac{x^kz^k(1+z)}{(1-z)^{2k+2}}
+=\frac{1+z}{1-(2+x)z+z^2}.
+\]
+Thus $Q_m$ has the defining recurrence and initial values of $P_m$.
+\end{proof}
+In particular the literal A111125 Comments claim (February 28, 2012)
+that its columns agree with A208508 fails in column zero: $1,3,5,\ldots$
+is not $1,1,1,\ldots$. The replacement is the $v$-family shear in
+Corollary~\ref{cor:morgan}, after removing the initial zeros.
+
+\begin{corollary}[Further Morgan--Voyce identities]\label{cor:morgan-siblings}
+With $P_m$ as above and $z$ invertible,
+\[
+z^{2m+1}-z^{-(2m+1)}=(z-z^{-1})P_m((z-z^{-1})^2).
+\]
+Consequently, with the usual Fibonacci numbers $F_n$ and Lucas numbers $L_n$,
+\[
+P_m(1)=L_{2m+1},\qquad
+F_{(2m+1)n}=\sum_{k=0}^m[x^k]P_m(x)\,
+(-1)^{(m+k)n}5^kF_n^{2k+1}\quad(n\geq0).
+\]
+The values $P_m(-1)$ repeat $1,2,1,-1,-2,-1$. For $m\geq1$,
+\[
+P_m(x)=\prod_{j=1}^m\left(x+4\sin^2\frac{j\pi}{2m+1}\right).
+\]
+These are established Morgan--Voyce and A111125 identities
+\cite{andre,related-arrays}.
+\end{corollary}
+\begin{proof}
+Both sides of the Laurent identity satisfy the recurrence with multiplier
+$z^2+z^{-2}$, and agree at $m=0,1$.
+The sequences $P_m(1)$ and $L_{2m+1}$ satisfy the recurrence with multiplier
+$3$ and initial values $1,4$. At $x=-1$ the multiplier is $1$, giving
+the displayed period. For the Fibonacci identity use Binet's formula with
+$\phi=(1+\sqrt5)/2$: substitute $z=\phi^n$ for even $n$, and
+$z=i\phi^n$ for odd $n$ in the Laurent identity. Then
+$z-z^{-1}=\sqrt5 F_n$ in the first case and $i\sqrt5 F_n$ in the second;
+the signs in the stated sum follow. The case $n=0$ is immediate.
+Finally the defining recurrence gives
+\[
+P_m(2\cos\theta-2)=\frac{\sin((2m+1)\theta/2)}{\sin(\theta/2)}.
+\]
+For $\theta=2j\pi/(2m+1)$, $1\leq j\leq m$, these give $m$ distinct
+zeros; the leading coefficient of $P_m$ is $1$, proving the product.
+\end{proof}
+
+\section{Columns, row sums and cross-reference corrections}
+\begin{corollary}\label{cor:generating}
+In the ring $\mathbb Z[x][[z]]$,
+\begin{equation}\label{eq:gf}
+F(z,x):=\sum_{n\geq1}v_n(x)z^{n-1}
+=\frac{1+z}{1-2z+(1-x)z^2}.
+\end{equation}
+For every $k\geq0$,
+\begin{equation}\label{eq:column-v}
+\sum_{n\geq1}(\coeff{k}{v_n})z^{n-1}
+=\frac{z^{2k}(1+z)}{(1-z)^{2k+2}}.
+\end{equation}
+For $k\geq1$, the companion column generating function is
+\begin{equation}\label{eq:column-u}
+\sum_{n\geq1}(\coeff{k}{u_n})z^{n-1}
+=\frac{z^{2k-1}(1+z)}{(1-z)^{2k+1}},
+\end{equation}
+and the constant column of $u_n$ has generating function $1/(1-z)$.
+\end{corollary}
+\begin{proof}
+Subtracting two consecutive equations for $v$ and using the equation for
+$u$ gives
+\[
+v_{n+2}=2v_{n+1}+(x-1)v_n\qquad(n\geq1),
+\]
+with $v_1=1$, $v_2=3$. Multiplying the generating series by
+$1-2z+(1-x)z^2$ leaves $1+z$, proving \eqref{eq:gf}.
+Expanding it as a geometric series in $xz^2/(1-z)^2$ gives
+\[
+F(z,x)=\sum_{k\geq0}x^k\frac{z^{2k}(1+z)}{(1-z)^{2k+2}},
+\]
+which proves \eqref{eq:column-v}. For $k\geq1$, the first equation of
+\eqref{eq:coeff-rec} and $a_{1,k}=0$ give
+\[
+(1-z)\sum_{n\geq1}a_{n,k}z^{n-1}
+=z\sum_{n\geq1}b_{n,k-1}z^{n-1},
+\]
+proving \eqref{eq:column-u}.
+The case $k=0$ follows from $a_{n,0}=1$.
+\end{proof}
+
+For each $k\geq0$, the nonzero column of $v_n$ starts at $n=2k+1$;
+for $u_n$ and $k\geq1$, it starts at $n=2k$.
+After removing these initial zeros, the generating functions are
+$(1+z)/(1-z)^{2k+2}$ and $(1+z)/(1-z)^{2k+1}$ respectively.
+These formulas determine the columns independently of their cross-references.
+All six column identifications in A208509, and the first four in A208508,
+agree with the binomial expansion of these functions. For instance,
+$b_{n,0}=2n-1$ and $a_{n,1}=(n-1)^2$, while
+\[
+b_{n,1}=\frac{(n-2)(n-1)(2n-3)}6\qquad(n\geq2).
+\]
+The fifth column of A208508 (one-based numbering) has $k=4$ and,
+after its initial zeros, generating function $(1+z)/(1-z)^9$.
+It begins $1,10,54,210,660$, not $1,12,77,352,1287$ as in A054334.
+In particular, $a_{9,4}=\binom88+\binom98=10$, whereas A054334
+has second term $12$. This refutes that column cross-reference; the
+replacement is \eqref{eq:column-u} with $k=4$. A054334 instead matches
+the sixth column, $k=5$, with generating function $(1+z)/(1-z)^{11}$
+after initial zeros \cite{a054334}. The corrected fifth-column sequence
+is A053347 \cite{columns}.
+
+\begin{corollary}\label{cor:rows}
+For $n\geq2$,
+\begin{equation}\label{eq:rows}
+v_n(1)=3\cdot2^{n-2},\qquad u_n(1)=3\cdot2^{n-2}-1,
+\end{equation}
+whereas $v_1(1)=u_1(1)=1$. If $w_n=v_n(-1)$, then
+\begin{equation}\label{eq:alternating}
+\sum_{n\geq1}w_nz^{n-1}=\frac{1+z}{1-2z+2z^2},\quad
+w_{n+2}=2w_{n+1}-2w_n,\quad w_1=1,\ w_2=3.
+\end{equation}
+The cross-reference ``Row sums, $v(n,1)$: A003948'' in A208509 is false:
+the correct row sums are A003945 at index $n-1$, beginning $1,3,6,12,24$,
+not $1,6,30,150,750$ \cite{a003945}.
+\end{corollary}
+\begin{proof}
+Setting $x=1$ in \eqref{eq:gf} gives $(1+z)/(1-2z)$, whose constant
+coefficient is $1$ and whose coefficient of $z^m$ is $3\cdot2^{m-1}$
+for $m\geq1$. The relation $u_n(1)=v_{n+1}(1)-v_n(1)-1$
+proves the second formula, including its separate case $n=1$.
+Setting $x=-1$ gives \eqref{eq:alternating}. A003948 has
+$a(0)=1$ and $a(m)=6\cdot5^{m-1}$ for $m\geq1$ \cite{a003948};
+in particular it never has the value $v_2(1)=3$, so shifting its index
+cannot repair the cross-reference. Formula \eqref{eq:rows} is the replacement.
+\end{proof}
+The same row-sum formula gives the A083329 identities, with $c_m=u_{m+1}(1)$,
+\[
+\sum_{m\geq0}c_mz^m=\frac{1-z+z^2}{(1-z)(1-2z)},\qquad
+\sum_{m\geq0}c_m\frac{z^m}{m!}=\frac{3e^{2z}-2e^z+1}{2}.
+\]
+These follow by separating $m=0$ from $c_m=3\cdot2^{m-1}-1$ for $m\geq1$.
+For comparison, the separate reciprocal identity for A003948 recorded by
+Schott (2021) follows from its geometric formula:
+$\sum_{m\geq0}1/\mathrm{A003948}(m)=1+\frac16\sum_{j\geq0}5^{-j}=29/24$.
+
+\section{The column family and its established interpretations}
+Put $h_d(m)=[z^m](1+z)/(1-z)^d$ for $d\geq2$, $m\geq0$.
+Thus the nonzero $v$-column of degree $k$ is $h_{2k+2}$, and the nonzero
+$u$-column of degree $k\geq1$ is $h_{2k+1}$.
+The formulas recorded by Barry (2003) and Borisov (2009), and the
+interpretations proved by Liu--Xin--Zhang (2024, pp.~15--17), fit this
+single family \cite{columns,liu}.
+
+\begin{corollary}\label{cor:family}
+For $d\geq2$ and $m\geq0$,
+\begin{align}
+h_d(m)&=\binom{m+d-1}{d-1}+\binom{m+d-2}{d-1}\label{eq:h}\\
+&=2\binom{m+d-1}{d-1}-\binom{m+d-2}{d-2}
+=\frac{2m+d-1}{d-1}\binom{m+d-2}{d-2}.\nonumber
+\end{align}
+Moreover $h_{d+1}(m)=\sum_{j=0}^m h_d(j)$ and
+\[
+h_d(m)=\sum_{j=1}^d(-1)^{j+1}\binom dj h_d(m-j)\qquad(m\geq d).
+\]
+As a polynomial in $m$, $h_d$ has degree $d-1$, leading coefficient
+$2/(d-1)!$, and symmetry $h_d(-m-d+1)=(-1)^{d-1}h_d(m)$.
+\end{corollary}
+\begin{proof}
+Expand $(1+z)/(1-z)^d$ by the binomial theorem and apply Pascal's identity
+to obtain \eqref{eq:h}. Multiplication by $(1-z)^{-1}$ gives partial sums;
+multiplication by $(1-z)^d$ gives the recurrence above.
+The product formula
+\[
+h_d(m)=\frac{(2m+d-1)(m+1)(m+2)\cdots(m+d-2)}{(d-1)!}
+\]
+proves the degree, leading coefficient and reflection identity, including
+the empty product when $d=2$.
+\end{proof}
+
+\begin{corollary}[Further column identities]\label{cor:column-siblings}
+For $n\geq1$ and $d\geq2$,
+\[
+\sum_{j=0}^n(-1)^j h_d(j)
+\frac{n(n-1)\cdots(n-j+1)}{(n+d)(n+d+1)\cdots(n+d+j-1)}=0,
+\]
+where an empty product is $1$. This is Bala's terminating identity (2019)
+in A005585, A040977, A050486 and A053347 \cite{columns}.
+If $p>d-1$ is prime and $e\geq1$, then $p^e\mid h_d(m)$ whenever
+$m+j\equiv0\pmod{p^e}$ for some $1\leq j\leq d-2$, or
+$2m+d-1\equiv0\pmod{p^e}$.
+\end{corollary}
+\begin{proof}
+Write $B(a,b)=\int_0^1t^{a-1}(1-t)^{b-1}\,dt$.
+For positive integers, integration by parts gives
+$B(a,b)=(a-1)!(b-1)!/(a+b-1)!$.
+Use the two binomial terms of \eqref{eq:h}; expanding $(1-t)^n$ and
+$(1-t)^{n-1}$ in these beta integrals turns the displayed sum into
+\[
+\frac{B(d,2n)}{B(d,n)}-
+\frac{n}{n+d}\frac{B(d,2n)}{B(d,n+1)}=0,
+\]
+since $B(d,n+1)=nB(d,n)/(n+d)$. All sums are finite.
+For divisibility use the product formula for $h_d$: its denominator
+$(d-1)!$ is invertible modulo $p^e$, and a numerator factor vanishes.
+\end{proof}
+In A005585's indexing $a(n)=h_6(n-1)$, the last conclusion gives Adamchuk's
+2007 assertions $p^e\mid a(p^e-j)$ for $0\leq j\leq3$, and
+$p^e\mid a((p^e-3)/2)$ for primes $p>5$ \cite{columns}.
+
+For example, successive partial sums explain the chain A000330, A002415,
+A005585, A040977, A050486, A053347, A054333, A054334, A057788, with their
+individual initial zero conventions. The middle entry A053347 is $h_9$;
+it is the corrected fifth nonzero companion column.
+
+\begin{corollary}[Established column interpretations]\label{cor:interpretations}
+Let $d\geq4$ and $m\geq0$.
+\begin{enumerate}
+\item In a set $X$ of size $m+d$, take disjoint subsets $Y,Z$ of sizes
+$2$ and $m+d-3$. The number of $d$-subsets meeting both is $h_d(m)$.
+\item The number of placements of $d-2$ queens on an
+$(m+d-2)\times(m+d-2)$ board in distinct rows and columns, with every pair
+attacking diagonally, is $2h_d(m)$.
+\item For the Chebyshev polynomials $T_0(t)=1$, $T_1(t)=t$,
+$T_{j+1}(t)=2tT_j(t)-T_{j-1}(t)$, and $r=d-1$,
+\[
+[t^r]T_{r+2m}(t)=(-1)^m2^{r-1}h_d(m).
+\]
+\item The order polytope of a chain of $d-3$ elements below two
+incomparable elements has $h_d(m)$ lattice points in its $m$th dilation.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+For (1), inclusion--exclusion gives
+$\binom{m+d}{d}-\binom{m+d-2}{d}$: a set missing $Z$ has at most three
+available elements. Pascal's identity gives \eqref{eq:h}. This is a
+specialization of Janji\'c's Theorem~1 \cite{janjic}.
+For (2), all queens lie on one diagonal. Indeed, relative to a fixed
+queen, two others on opposite slopes have displacement
+$(a-b,a+b)$ with $ab\ne0$, which is not diagonal. Writing $r=d-2$, the
+count over the two orientations is
+\[
+2\left(\binom{m+r}{r}+2\sum_{j=0}^{m-1}\binom{j+r}{r}\right)
+=2\left(\binom{m+r}{r}+2\binom{m+r}{r+1}\right)=2h_d(m).
+\]
+The sum is empty for $m=0$.
+For (3), the defining recurrence gives
+\[
+\sum_{j\geq0}T_j(t)s^j=\frac{1-ts}{1-2ts+s^2},\qquad
+[t^r]\frac{1-ts}{1-2ts+s^2}
+=\frac{2^{r-1}s^r(1-s^2)}{(1+s^2)^{r+1}}.
+\]
+Extract $s^{r+2m}$ and use the generating function of $h_{r+1}$.
+For (4), lattice points are weakly order-preserving assignments of values
+$0,\ldots,m$. Order the two top values in either way and subtract their
+equality case. The count is
+$2\binom{m+d-1}{d-1}-\binom{m+d-2}{d-2}=h_d(m)$.
+Items (1)--(3) reprove Liu--Xin--Zhang, Propositions~4.6--4.8;
+item (4) is their Section~4.2 family \cite{liu}.
+\end{proof}
+
+\section{The alternating-sum sibling and a solved covering conjecture}
+\begin{corollary}\label{cor:complex}
+Write $a_m=v_{m+1}(-1)$ and define $b_0=2$,
+$a_0=1$, $a_{m+1}=a_m+b_m$, $b_{m+1}=b_m-a_m$.
+Then
+\[
+a_m+ib_m=(1+2i)(1-i)^m,\qquad a_{m+4}=-4a_m,\quad b_{m+4}=-4b_m.
+\]
+In particular,
+$b_0,\ldots,b_3=2,1,-2,-6$ and $b_{18}=-512$.
+If $\alpha=\arctan 2$, the continuous polar angle is
+$\theta_m=\alpha-m\pi/4$, and
+\[
+a_m=A B^{\theta_m}\cos\theta_m,\qquad
+b_m=A B^{\theta_m}\sin\theta_m,
+\quad A=\sqrt5\,16^{\alpha/(2\pi)},\ B=16^{-1/(2\pi)}.
+\]
+Also $u_n(-1)=a_n-a_{n-1}-1$ for $n\geq1$.
+\end{corollary}
+\begin{proof}
+Multiplication by $1-i$ gives the two recurrences. Its fourth power is
+$-4$ and its modulus and argument are $\sqrt2$ and $-\pi/4$.
+The formula for $a_m$ agrees with \eqref{eq:alternating} by its initial
+values and second-order recurrence. Finally,
+$u_n(-1)=v_{n+1}(-1)-v_n(-1)-1$ follows from \eqref{eq:pair}.
+\end{proof}
+
+These formulas reprove Lallouet's four-step law (2007) and Stephan's
+complex formula (2013) in A090131 \cite{a090131}.
+They also correct two details of Lallouet's Comments and polar Formula
+(June 29, 2007). The displayed $b$-prefix omits $b_{18}=-512$ before
+$b_{19}=-1536$. The branch
+$\Theta(4p+1)=p\pi+\arctan2$ gives $A B^{\Theta(5)}\cos\Theta(5)=-1/4$
+when $p=1$, whereas $a_5=-12$ (even a one-place shift gives $a_4=-4$).
+The continuous $\theta_m$ above is the replacement, with the source's
+zero-based sequence index $m$. The four residue-class laws and complex
+formula themselves remain valid.
+
+\begin{corollary}[Chu's conjecture; Blanco G\'omez, 2026]\label{cor:chu}
+For $n\geq1$, the least $k$ for which subsets $A,B$ of
+$\{0,\ldots,n^2-1\}$ satisfy $|A|=|B|=k$ and
+$\{0,\ldots,n^2-1\}\subseteq A+B$ is $n$.
+\end{corollary}
+\begin{proof}
+There are at most $|A||B|=k^2$ distinct sums, so $k\geq n$.
+The sets $A=\{0,\ldots,n-1\}$ and
+$B=\{0,n,\ldots,(n-1)n\}$ attain equality, by division with remainder.
+This is the proof already given by Blanco G\'omez (2026) \cite{blanco}.
+\end{proof}
+This is the conjecture recorded by Chu (March 9, 2022) in A000290,
+Comments, followed there by Blanco G\'omez's solution (October 5, 2026)
+\cite{a000290}. It concerns the square column of A208508, not a new
+conjecture about the full polynomial pair.
+
+\section{A homogeneous form and source coverage}
+The affine term can be removed without division. Put $U_n=u_n+1$,
+$V_n=v_n$, so that
+\[
+\begin{pmatrix}U_{n+1}\\V_{n+1}\end{pmatrix}
+=\left(I+N\right)\begin{pmatrix}U_n\\V_n\end{pmatrix},\qquad
+N=\begin{pmatrix}0&x\\1&0\end{pmatrix},\quad N^2=xI.
+\]
+For $m\geq0$, define
+$E_m=\sum_{j\geq0}\binom m{2j}x^j$ and
+$O_m=\sum_{j\geq0}\binom m{2j+1}x^j$.
+The binomial theorem for $I+N$ gives
+$(I+N)^m=\left(\begin{smallmatrix}E_m&xO_m\\O_m&E_m\end{smallmatrix}\right)$.
+This also yields a general initial-value formula:
+
+\begin{proposition}\label{prop:general}
+Over any commutative ring $R$, let $t,p,q,c\in R$ and let
+$u_1=p$, $v_1=q$, $u_{n+1}=u_n+tv_n$,
+$v_{n+1}=u_n+v_n+c$. Then, with $m=n-1$,
+\[
+u_n=E_m(t)(p+c)+tO_m(t)q-c,\qquad
+v_n=O_m(t)(p+c)+E_m(t)q.
+\]
+\end{proposition}
+\begin{proof}
+Replace $x$ by $t$ in the displayed homogeneous matrix recurrence.
+The pair $(u_n+c,v_n)$ starts at $(p+c,q)$; multiply it by that matrix power.
+All binomial coefficients act through the canonical integer map to the ring.
+\end{proof}
+Taking $R=S[x]$ and $t=ax$ covers any scalar multiple of the coupling
+variable over any commutative coefficient ring $S$. In the original initial
+conditions the two coefficient formulas are multiplied by $a^k$, with the
+same constant correction for $u_n$; this follows by substituting $ax$ for $x$.
+
+\noindent The table distinguishes assertions actually made in the sources
+from additional results. Initial zeros and target offsets are respected.
+``Not covered'' marks the boundary of the statements proved here; it does
+not classify their status in the literature.
+
+{\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.53\linewidth}>{\raggedright\arraybackslash}p{0.42\linewidth}@{}}
+\toprule
+Source item & Coverage here\\
+\midrule
+\endfirsthead
+\toprule Source item & Coverage here\\\midrule
+\endhead
+A208509 Formula: Werner's conjecture & Reproved; prior coefficient
+families Knuth 1993, pp.~285--286; exact identification in
+Theorem~\ref{thm:coefficients}\\
+A208508 Formula: companion recurrence & Coefficient formula not posed; proved, \eqref{eq:even}\\
+A208509 columns $0$--$5$: A005408, A000330, A005585,
+A050486, A054333, A057788 & Proved, \eqref{eq:column-v}\\
+A208508 columns $1$--$4$ (one-based): A000012, A000290,
+A002415, A040977 & Proved, \eqref{eq:column-u} and constant column\\
+A208508 Comments, column $5$: A054334 & Refuted-and-corrected:
+$a_{9,4}=10$; column $5$ is A053347; A054334 is column $6$\\
+A208508 row sums: A083329 & Proved, \eqref{eq:rows}; index $n-1$\\
+A208509 alternating sums: A090131 & Proved, \eqref{eq:alternating}; index $n-1$\\
+A208509 Crossrefs, row sums: A003948 & Refuted-and-corrected:
+$v_2(1)=3$; replacement \eqref{eq:rows}\\
+A029653 Pascal array; A208510 Formula (Skirrow, March 29, 2026)
+and earlier column list & Reproved; prior proof Barry 2013,
+Proposition~11; $W_n$ identity above\\
+A111125 / generalized Morgan--Voyce coefficients & Reproved;
+prior proof Andr\'e-Jeannin 1994, equation~(9);
+Corollary~\ref{cor:morgan}\\
+A111125 Laurent, Fibonacci and zero formulas; alternating period &
+Reproved; prior identities Andr\'e-Jeannin 1994, pp.~230--231;
+Lang 2012 in A111125; Corollary~\ref{cor:morgan-siblings}\\
+A111125 Comments (Kimberling, February 28, 2012): columns A208508 &
+Refuted-and-corrected: first column $1,3,5,\ldots$;
+replacement is the A208509 shear\\
+Fixed-column binomial forms (Barry 2003; Borisov 2009), partial sums,
+finite-difference recurrences and reflection identities & Reproved,
+Corollary~\ref{cor:family}; earlier formulas cited \cite{columns}\\
+Bala's terminating identities (2019); Adamchuk's A005585 divisibility
+comment (2007) & Proved, Corollary~\ref{cor:column-siblings}; the full
+$d$-parameter divisibility statement is not posed\\
+Subset, queens, Chebyshev and order-polytope interpretations & Reproved;
+prior proof Janji\'c 2008 (subset theorem), Liu--Xin--Zhang 2024,
+pp.~15--17; Corollary~\ref{cor:interpretations}\\
+A090131 Formula, four-step law (Lallouet 2007), complex expression
+(Stephan 2013) & Reproved; earlier formulas cited;
+Corollary~\ref{cor:complex}\\
+A090131 Comments, $b$-prefix and polar Formula (Lallouet, June 29, 2007) &
+Refuted-and-corrected: $b_{18}=-512$ and continuous $\theta_m$;
+Corollary~\ref{cor:complex}\\
+A000290 Comments: Chu's conjecture (March 9, 2022) & Reproved;
+prior proof Blanco G\'omez (October 5, 2026), Proposition~9.1;
+Corollary~\ref{cor:chu}\\
+Arbitrary initial values and affine term & Not posed; proved,
+Proposition~\ref{prop:general}\\
+A000330 Comments (Alkan, July 30, 2020): sums of three generalized
+pyramidal numbers & Not covered\\
+A005408 Comments (Adamson, September 9, 2012): prime-coach characterization &
+Not covered\\
+A003948 Comments (Schnoebelen, April 11, 2024): Fibonacci entry-point
+exclusivity & Not covered\\
+Reciprocal sums, unrelated arithmetic and other combinatorial
+interpretations in the linked entries; A208510's wider recurrence guide & Not covered\\
+\bottomrule
+\end{longtable}}
+
+\paragraph{Formal and finite coverage.}
+The pinned Lean file
+\href{https://github.com/the-omega-institute/trureturing/blob/6ffa76e4424ce4c0d1048e56afb0724762ed8285/D5/S1/Recurrence/Invariants/AffinePolynomialPairBinomialCoefficients.lean}{coefficient development}
+defines \texttt{pair} with stage zero corresponding to $n=1$.
+Its declaration \texttt{werner\_a208509} states \eqref{eq:odd} for every
+$n\geq1$ and $k\geq0$; its simultaneous induction also contains
+\eqref{eq:even}. The companion identity is a local invariant, not a separate
+exported theorem. Corollaries~\ref{cor:generating}--\ref{cor:chu} and
+Proposition~\ref{prop:general} have the written proofs above.
+The accompanying \texttt{verify.py} compares both coefficient formulas with
+the defining recurrence for $1\leq n\leq250$, including zero tails; checks
+degrees, columns, sums, the column interpretations, the complex recurrence,
+square coverings, and the general initial-value formula; and compares
+the cited numerical prefixes. These are finite checks with the ranges
+specified in \texttt{verification.json}.
+
+\begin{thebibliography}{18}\small
+\bibitem{a208509}
+C. Kimberling, \emph{OEIS A208509}, February 27, 2012;
+Formula conjecture by K. Werner, January 11, 2022.
+Revision 28, February 22, 2022.
+\href{https://oeis.org/history/view?seq=A208509\&v=28}{Entry and exact revision}.
+\bibitem{a208508}
+C. Kimberling, \emph{OEIS A208508}, February 27, 2012.
+Revision 10, November 7, 2015.
+\href{https://oeis.org/history/view?seq=A208508\&v=10}{Entry and exact revision}.
+\bibitem{a003948}
+The OEIS Foundation, \emph{OEIS A003948}, revision 111, May 30, 2026,
+Name, Data and Formula. \url{https://oeis.org/A003948}.
+\bibitem{a003945}
+The OEIS Foundation, \emph{OEIS A003945}, Name and Formula;
+P. Barry's formula, April 29, 2003.
+\url{https://oeis.org/A003945}.
+\bibitem{a054334}
+W. Lang, \emph{OEIS A054334}, revision 46, August 4, 2026,
+Data and Formula. \url{https://oeis.org/A054334}.
+\bibitem{columns}
+The OEIS Foundation, \emph{Column sequences A005408, A000330, A005585,
+A050486, A054333, A057788, A000012, A000290, A002415, A040977 and A053347},
+Name, Formula and Comments, accessed November 5, 2026.
+Barry's binomial formulas date to March 2003; Borisov's forms to March 2009.
+\href{https://oeis.org/A053347}{A053347, revision 73 (January 8, 2025)}
+has $(1+z)/(1-z)^9$. Individual entry links and offsets appear in
+\texttt{reference-data.json}.
+\bibitem{janjic}
+M. Janji\'c, \emph{An Enumerative Function}, arXiv:0801.1976v2,
+January 19, 2008 (v1: January 13), Theorem~1, pp.~2--3.
+\url{https://arxiv.org/abs/0801.1976v2}.
+\bibitem{liu}
+F. Liu, G. Xin and C. Zhang, \emph{Ehrhart Polynomials of Order Polytopes:
+Interpreting Combinatorial Sequences on the OEIS}, arXiv:2412.18744v1,
+December 25, 2024, Section~4.2, Table~3 and Propositions~4.6--4.8,
+pp.~15--17. \url{https://arxiv.org/abs/2412.18744v1}.
+\bibitem{a090131}
+P. Barry, \emph{OEIS A090131}, November 21, 2003, revision 19,
+June 13, 2015; Comments and Formula contributions by P. Lallouet
+(June 29, 2007) and R. Stephan (July 21, 2013).
+\url{https://oeis.org/A090131}.
+\bibitem{a000290}
+The OEIS Foundation, \emph{OEIS A000290}, Comments: M. Chu's conjecture
+(March 9, 2022) and R. Blanco G\'omez's solution (October 5, 2026).
+\url{https://oeis.org/A000290}.
+\bibitem{blanco}
+R. Blanco G\'omez, \emph{Open statements in core entries of the OEIS, III:
+Benford's law for the Bell numbers, Bala's congruences for the Motzkin
+numbers, and further proofs}, October 5, 2026, Proposition~9.1, p.~8.
+\url{https://doi.org/10.5281/zenodo.23150301}.
+\bibitem{knuth}
+D. E. Knuth, \emph{Johann Faulhaber and sums of powers},
+Mathematics of Computation \textbf{61} (203) (1993), 277--294,
+pp.~285--286 (preprint pp.~11--12).
+\url{https://arxiv.org/abs/math/9207222}.
+\bibitem{andre}
+R. Andr\'e-Jeannin, \emph{A generalization of Morgan-Voyce polynomials},
+The Fibonacci Quarterly \textbf{32} (3) (1994), 228--231,
+equation~(9), pp.~229--230.
+\url{https://www.fq.math.ca/Scanned/32-3/andre-jeannin.pdf}.
+\bibitem{barry}
+P. Barry, \emph{A Note on a Family of Generalized Pascal Matrices Defined
+by Riordan Arrays}, Journal of Integer Sequences \textbf{16} (2013),
+Article 13.5.4, May 16, 2013, Proposition~11 and Example~13, pp.~8--10.
+\url{https://cs.uwaterloo.ca/journals/JIS/VOL16/Barry2/barry231.html}.
+\bibitem{related-arrays}
+The OEIS Foundation, \emph{A029653}, revision 143 (October 7, 2026),
+\emph{A111125}, revision 144 (May 26, 2026), and
+C. Kimberling, \emph{A208510}, revision 109 (April 3, 2026),
+Comments and Formula.
+\url{https://oeis.org/A029653}; \url{https://oeis.org/A111125};
+\url{https://oeis.org/A208510}.
+\bibitem{janjic-petkovic}
+M. Janji\'c and B. Petkovi\'c, \emph{A Counting Function},
+arXiv:1301.4550v1, January 19, 2013, p.~6, proof of Proposition~18.
+\url{https://arxiv.org/abs/1301.4550v1}.
+\bibitem{liang}
+H. Liang, Y. Pei and Y. Wang, \emph{Analytic combinatorics of coordination
+numbers of cubic lattices}, arXiv:2302.11856v1, February 23, 2023,
+Proposition~2.9, p.~8; Advances in Applied Mathematics \textbf{147} (2023),
+102518. \url{https://arxiv.org/abs/2302.11856v1}.
+\bibitem{yamaguchi}
+M. Yamaguchi and N. Shiraishi, \emph{Violating the All-or-Nothing Picture
+of Local Charges in Non-Hermitian Bosonic Chains}, arXiv:2603.10972,
+v1 (March 11, 2026), v2 (April 16, 2026), Section~V.2.3, p.~14,
+after equation~(81). \url{https://arxiv.org/abs/2603.10972v2}.
+\end{thebibliography}
+\noindent\small\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+\end{document}

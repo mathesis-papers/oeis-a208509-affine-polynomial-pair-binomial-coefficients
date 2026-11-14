@@ -1,0 +1,233 @@
+{
+  "access_date": "2026-11-05",
+  "references": [
+    {
+      "key": "knuth",
+      "authors": "Donald E. Knuth",
+      "year": 1993,
+      "title": "Johann Faulhaber and sums of powers",
+      "url": "https://doi.org/10.1090/S0025-5718-1993-1197512-7",
+      "locator": "pp. 285-286; preprint pp. 11-12",
+      "scope": "Both binomial families and coupled finite differences",
+      "pdf_sha256": "b2ea0c1110372e1ee16df9e2970e5e4843c86d03d821280acf53e94113b65dec"
+    },
+    {
+      "key": "andre",
+      "authors": "Richard Andre-Jeannin",
+      "year": 1994,
+      "title": "A generalization of Morgan-Voyce polynomials",
+      "url": "https://www.fq.math.ca/Scanned/32-3/andre-jeannin.pdf",
+      "locator": "equation (9), pp. 229-230; roots and Lucas evaluation pp. 230-231",
+      "scope": "Generalized coefficient theorem, r=2 specialization, trigonometric roots",
+      "pdf_sha256": "7e932d7ddb7a1dd1b81088a9403b0b0826da071a79544605562442c4b0ffd968"
+    },
+    {
+      "key": "janjic-petkovic",
+      "authors": "Milan Janjic; Boris Petkovic",
+      "year": 2013,
+      "title": "A Counting Function",
+      "url": "https://arxiv.org/abs/1301.4550v1",
+      "locator": "p. 6, before and in proof of Proposition 18",
+      "scope": "Bijective count binomial(m,k)+binomial(m+1,k)",
+      "pdf_sha256": "73461ab53c393ece5b68d2fae1f1a10de28e74fab2a89398f74a37b416eb95f4"
+    },
+    {
+      "key": "barry",
+      "authors": "Paul Barry",
+      "year": 2013,
+      "title": "A Note on a Family of Generalized Pascal Matrices Defined by Riordan Arrays",
+      "url": "https://cs.uwaterloo.ca/journals/JIS/VOL16/Barry2/barry231.html",
+      "locator": "Proposition 11 and Example 13, pp. 8-10; published May 16, 2013",
+      "scope": "Pascal array containing the even and odd coefficient arrays",
+      "pdf_sha256": "19dd2428876e66becdb3766e3748da30f9f312679986cc239e32e892a5e8b8c8"
+    },
+    {
+      "key": "janjic",
+      "authors": "Milan Janjic",
+      "year": 2008,
+      "title": "An Enumerative Function",
+      "url": "https://arxiv.org/abs/0801.1976v2",
+      "locator": "Theorem 1, pp. 2-3; v2 Jan 19, 2008",
+      "scope": "Inclusion-exclusion theorem for subsets meeting specified blocks",
+      "pdf_sha256": "613e994d5e7760a125a9bb65fdb330dd6fd6b34ca8284e725b2cb4ca0af04c57"
+    },
+    {
+      "key": "liang",
+      "authors": "Huyile Liang; Yanni Pei; Yi Wang",
+      "year": 2023,
+      "title": "Analytic combinatorics of coordination numbers of cubic lattices",
+      "url": "https://arxiv.org/abs/2302.11856v1",
+      "locator": "Proposition 2.9, p. 8",
+      "scope": "Same Pascal array as lower LDU factor",
+      "pdf_sha256": "42a07ec37584a9fa86057e45ab54cb5811951d84cb55ad65f823a6cb9fecca24"
+    },
+    {
+      "key": "liu",
+      "authors": "Feihu Liu; Guoce Xin; Chen Zhang",
+      "year": 2024,
+      "title": "Ehrhart Polynomials of Order Polytopes: Interpreting Combinatorial Sequences on the OEIS",
+      "url": "https://arxiv.org/abs/2412.18744v1",
+      "locator": "Section 4.2, Table 3 and Propositions 4.6-4.8, pp. 15-17",
+      "scope": "Column family and established subset, queens, Chebyshev and polytope interpretations",
+      "pdf_sha256": "c0f7e200dc25b41a0eba4552deab692802dc61000fb6bd892a5e2b9bb4aaed03"
+    },
+    {
+      "key": "yamaguchi-v1",
+      "authors": "Mizuki Yamaguchi; Naoto Shiraishi",
+      "year": 2026,
+      "title": "Violating the All-or-Nothing Picture of Local Charges in Non-Hermitian Bosonic Chains",
+      "url": "https://arxiv.org/abs/2603.10972v1",
+      "locator": "Section V.2.3, p. 14, after equation (81); March 11, 2026",
+      "scope": "Use of reversed Lucas triangle, not a recurrence-identification theorem",
+      "pdf_sha256": "282b94fc63364847f94c273669048c51849612fc31ed88fede8748b4c299b430"
+    },
+    {
+      "key": "yamaguchi-v2",
+      "authors": "Mizuki Yamaguchi; Naoto Shiraishi",
+      "year": 2026,
+      "title": "Violating the All-or-Nothing Picture of Local Charges in Non-Hermitian Bosonic Chains",
+      "url": "https://arxiv.org/abs/2603.10972v2",
+      "locator": "Section V.2.3, p. 14, after equation (81); April 16, 2026",
+      "scope": "Same relevant array occurrence as v1",
+      "pdf_sha256": "ca1363f6e45cd56eaa41c9c9c5cc40f791898aa2765f2e6d2979b23d34ae9f4b"
+    },
+    {
+      "key": "blanco",
+      "authors": "Roberto Blanco Gomez",
+      "year": 2026,
+      "title": "Open statements in core entries of the OEIS, III: Benford's law for the Bell numbers, Bala's congruences for the Motzkin numbers, and further proofs",
+      "url": "https://doi.org/10.5281/zenodo.23150301",
+      "locator": "Proposition 9.1, p. 8; October 5, 2026",
+      "scope": "Proof of Chu's square-covering conjecture in A000290",
+      "pdf_sha256": "994d3ffcda26540e442e40d81079498a0969d2da2340862c91175812e3051e29"
+    },
+    {
+      "key": "A000012",
+      "url": "https://oeis.org/A000012",
+      "revision_header": "%I A000012 M0003 #477 Sep 08 2026 22:50:36",
+      "entry_sha256": "f27765b1b441191efcd773c0486e34347ea3a127c322ae105ec694bab3b99289"
+    },
+    {
+      "key": "A000290",
+      "url": "https://oeis.org/A000290",
+      "revision_header": "%I A000290 M3356 N1350 #922 Oct 06 2026 20:50:50",
+      "entry_sha256": "be7667fc78bd1c4310cdc328022a1dc31c840961917704be20838ccb76f68c41"
+    },
+    {
+      "key": "A000330",
+      "url": "https://oeis.org/A000330",
+      "revision_header": "%I A000330 M3844 N1574 #714 Nov 02 2026 15:20:32",
+      "entry_sha256": "e59816c4b6123a59b3f3f114afadfd05dc40aa03a98d9476cfe328d619a6fa3e"
+    },
+    {
+      "key": "A002415",
+      "url": "https://oeis.org/A002415",
+      "revision_header": "%I A002415 M4135 N1714 #378 Oct 13 2026 09:20:00",
+      "entry_sha256": "c37dfdcdd4cfd57c904f4fd7c64aab9a8eb61baf0514c4bd3753a7f42db7a8f9"
+    },
+    {
+      "key": "A003945",
+      "url": "https://oeis.org/A003945",
+      "revision_header": "%I A003945 #131 May 30 2026 16:39:47",
+      "entry_sha256": "2fb011180ca238d560c3131860fb7b19e8b38cc03ea3495c3be17d29f8fedc4b"
+    },
+    {
+      "key": "A003948",
+      "url": "https://oeis.org/A003948",
+      "revision_header": "%I A003948 #111 May 30 2026 16:39:47",
+      "entry_sha256": "5b11af5ef82b9a710d51a2126d34757fad21c0b8b8e37d1eb0c87ff238627992"
+    },
+    {
+      "key": "A005408",
+      "url": "https://oeis.org/A005408",
+      "revision_header": "%I A005408 M2400 #519 Oct 20 2026 17:27:43",
+      "entry_sha256": "d4e47a419f72be4566610593b92f71fbf752557583d6af7edc25b3cddc382f26"
+    },
+    {
+      "key": "A005585",
+      "url": "https://oeis.org/A005585",
+      "revision_header": "%I A005585 M4387 #176 Aug 04 2026 16:41:23",
+      "entry_sha256": "e097b9e44ba9848b0106de89be0910c81597e604583f75dc09945a4eeca7ba65"
+    },
+    {
+      "key": "A029653",
+      "url": "https://oeis.org/A029653",
+      "revision_header": "%I A029653 #143 Oct 07 2026 09:56:56",
+      "entry_sha256": "d15102f517d0c409bd5942aa035df52a886367897114fa75b28be49ef7620a79"
+    },
+    {
+      "key": "A040977",
+      "url": "https://oeis.org/A040977",
+      "revision_header": "%I A040977 #104 Oct 30 2025 09:26:26",
+      "entry_sha256": "61519011789b486db7e4219ab6d9d34f94e0e23bdf07311dcb24bae436a452b2"
+    },
+    {
+      "key": "A050486",
+      "url": "https://oeis.org/A050486",
+      "revision_header": "%I A050486 #77 Aug 11 2025 01:54:12",
+      "entry_sha256": "accc068b2d88b03ccb2be2cb5aa67ba70bc96e74aaea3132ef3d374a01958368"
+    },
+    {
+      "key": "A053347",
+      "url": "https://oeis.org/A053347",
+      "revision_header": "%I A053347 #73 Jan 08 2025 12:20:00",
+      "entry_sha256": "c9e1a479c8bfd56daf474028f61eca0c61180fe66d39cd24145114ce17e00503"
+    },
+    {
+      "key": "A054333",
+      "url": "https://oeis.org/A054333",
+      "revision_header": "%I A054333 #69 Aug 04 2026 16:26:41",
+      "entry_sha256": "e2813cbf02dbaf85ad9397329a9b5751b54bad8694db4c8ff9191d53a87127ff"
+    },
+    {
+      "key": "A054334",
+      "url": "https://oeis.org/A054334",
+      "revision_header": "%I A054334 #46 Aug 04 2026 16:26:36",
+      "entry_sha256": "1546b2e4b1f1e4605e17af55f7fb2d035b048a1e3bf31d2f4fbec5b31e13f0f0"
+    },
+    {
+      "key": "A057788",
+      "url": "https://oeis.org/A057788",
+      "revision_header": "%I A057788 #56 Sep 22 2025 16:00:35",
+      "entry_sha256": "44704ff19321aa56c4baeb105cb806920f3de6c6bba9f16f8452ce0028a3ddcd"
+    },
+    {
+      "key": "A083329",
+      "url": "https://oeis.org/A083329",
+      "revision_header": "%I A083329 #141 Oct 07 2026 16:44:17",
+      "entry_sha256": "54eb4d63a277481b2ab8d950161c82b1f435f0b7beb6805947e55778d710ebfe"
+    },
+    {
+      "key": "A090131",
+      "url": "https://oeis.org/A090131",
+      "revision_header": "%I A090131 #19 Jun 13 2015 00:51:16",
+      "entry_sha256": "4db000ca052ced1305a942d218ec05e1b3e3e7f9da136a9a16c2c6f624bf0bb3"
+    },
+    {
+      "key": "A111125",
+      "url": "https://oeis.org/A111125",
+      "revision_header": "%I A111125 #144 May 26 2026 00:43:17",
+      "entry_sha256": "41cb736ded05eac6f22c14b6bc2af587df284be789f9b938afaa49bc9f7d7989"
+    },
+    {
+      "key": "A208508",
+      "url": "https://oeis.org/A208508",
+      "revision_header": "%I A208508 #10 Nov 07 2015 13:57:40",
+      "entry_sha256": "c88c749749f5e4944ef974eab6217576a5195f85fd65a34f671aa5f4e53d3175"
+    },
+    {
+      "key": "A208509",
+      "url": "https://oeis.org/A208509",
+      "revision_header": "%I A208509 #28 Feb 22 2022 12:43:26",
+      "entry_sha256": "aad0c0fd287110c8b9f5ca1f7c4d4af77bbe3e71dcf284faf7e6baba1efb6c5a"
+    },
+    {
+      "key": "A208510",
+      "url": "https://oeis.org/A208510",
+      "revision_header": "%I A208510 #109 Apr 03 2026 17:14:43",
+      "entry_sha256": "161ff8efa7391d55ff873d8c3aa435a88431e5f2de8a1f41d7f37b513bf545e9"
+    }
+  ],
+  "posing_locator": "A208509, FORMULA, revision 28; Werner, Jan 11 2022",
+  "coverage": "See the source-coverage table in note.tex for proved statements, reproved prior results, corrected statements, and items outside the stated conclusions."
+}
