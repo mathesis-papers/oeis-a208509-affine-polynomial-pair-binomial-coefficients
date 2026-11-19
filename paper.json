@@ -2,16 +2,16 @@
   "files": {
     "pdf": {
       "bytes": 122928,
-      "matches_public": null,
+      "matches_public": true,
       "path": "paper.pdf",
-      "public_sha256": null,
+      "public_sha256": "b277246578a47bf9de229819d5d638b278417a703d46d99a1f8361fb9b0a3ee4",
       "sha256": "b277246578a47bf9de229819d5d638b278417a703d46d99a1f8361fb9b0a3ee4"
     },
     "source": {
       "bytes": 146803,
-      "matches_public": null,
+      "matches_public": true,
       "path": "source.archive",
-      "public_sha256": null,
+      "public_sha256": "125c45af0e28903982ab235c7c493c7ea075b504768449a6f0a9ddf3c8c89fbd",
       "sha256": "125c45af0e28903982ab235c7c493c7ea075b504768449a6f0a9ddf3c8c89fbd"
     }
   },
@@ -38,6 +38,8 @@
     "license": "CC-BY-4.0",
     "msc": [],
     "pdf": {
+      "bytes": 122928,
+      "sha256": "b277246578a47bf9de229819d5d638b278417a703d46d99a1f8361fb9b0a3ee4",
       "url": "/api/v1/collected-papers/oeis-a208509-affine-polynomial-pair-binomial-coefficients/files/pdf?version=2"
     },
     "previous_version": null,
@@ -46,6 +48,8 @@
     "record": "oeis-a208509-affine-polynomial-pair-binomial-coefficients",
     "repository_name": "oeis-a208509-affine-polynomial-pair-binomial-coefficients",
     "source": {
+      "bytes": 146803,
+      "sha256": "125c45af0e28903982ab235c7c493c7ea075b504768449a6f0a9ddf3c8c89fbd",
       "url": "/api/v1/collected-papers/oeis-a208509-affine-polynomial-pair-binomial-coefficients/files/source?version=2"
     },
     "title": "Extensions of Knuth's coefficient families (1993), with corrected OEIS links: Werner's conjecture in OEIS A208509, Formula, revision 28",
